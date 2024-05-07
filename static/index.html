@@ -5,7 +5,20 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <title>Yewchat!</title>
     </head>
-    <body>
+    <body class="flex items-center justify-center min-h-screen" style="background: linear-gradient(300deg, #9333ea, #4f46e5, #ec4899); background-size: 600% 600%; animation: gradient 16s ease infinite;">
         <script src="yewchat.js"></script>
     </body>
+    <style>
+        {"@keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+        }"}
+    </style>
 </html>

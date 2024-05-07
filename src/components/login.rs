@@ -26,14 +26,19 @@ pub fn login() -> Html {
         let user = user.clone();
         Callback::from(move |_| *user.username.borrow_mut() = (*username).clone())
     };
-    
+
     html! {
-        <div class="bg-gray-800 flex w-screen">
-            <div class="container mx-auto flex flex-col justify-center items-center	">
-                <form class="m-4 flex">
-                    <input {oninput} class="rounded-l-lg p-4 border-t mr-0 border-b border-l text-gray-800 border-gray-200 bg-white" placeholder="Username"/>
-                    <Link<Route> to={Route::Chat}> <button {onclick} disabled={username.len()<1} class="px-8 rounded-r-lg bg-violet-600	  text-white font-bold p-4 uppercase border-violet-600 border-t border-b border-r" >{"Go Chatting!"}</button></Link<Route>>
-                </form>
+        <div class="w-full h-full flex justify-center items-center">
+            <div class="bg-gray-800 bg-opacity-75 rounded-lg p-8 max-w-md">
+                <div class="container mx-auto flex flex-col justify-center items-center">
+                    <h1 class="text-4xl font-bold text-white mb-6 text-center">{"Welcome Back"}</h1>
+                    <form class="w-full flex flex-col">
+                        <input {oninput} class="rounded p-4 mb-4 border border-gray-200 text-gray-800 bg-white" placeholder="Username"/>
+                        <Link<Route> to={Route::Chat}>
+                            <button {onclick} disabled={username.len()<1} class="px-8 rounded bg-violet-600 text-white font-bold p-4 uppercase border border-violet-600 hover:bg-violet-700 transition duration-300">{"Go Chatting!"}</button>
+                        </Link<Route>>
+                    </form>
+                </div>
             </div>
         </div>
     }
